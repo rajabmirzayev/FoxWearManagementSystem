@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: FoxWearManagement
+  datasource:
+    username: rgb
+    password: foxwear
+    url: jdbc:postgresql://localhost:5432/foxweardb
+    driver-class-name: org.postgresql.Driver
+server:
+  port: 8050
