@@ -1,6 +1,7 @@
 package com.library.foxwearmanagement.controller.enums;
 
 import com.library.foxwearmanagement.dto.ApiResponse;
+import com.library.foxwearmanagement.entity.enums.WearType;
 import com.library.foxwearmanagement.service.enums.WearTypeService;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,7 @@ public class WearTypeController {
     private final WearTypeService wearTypeService;
 
     @GetMapping
-    public ResponseEntity<@NonNull ApiResponse<List<String>>> getWearTypes() {
+    public ResponseEntity<@NonNull ApiResponse<List<WearType>>> getWearTypes() {
         var response = wearTypeService.getWearTypes();
 
         return ResponseEntity.ok(ApiResponse.success(response));

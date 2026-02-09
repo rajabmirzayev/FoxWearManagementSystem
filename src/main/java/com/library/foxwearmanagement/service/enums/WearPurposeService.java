@@ -12,10 +12,7 @@ import java.util.List;
 public class WearPurposeService {
     private final WearPurposeRepository wearPurposeRepository;
 
-    public List<String> getWearPurposes() {
-        return wearPurposeRepository.findAll()
-                .stream()
-                .map(WearPurpose::getName)
-                .toList();
+    public List<WearPurpose> getWearPurposes() {
+        return wearPurposeRepository.findAll();
     }
 }

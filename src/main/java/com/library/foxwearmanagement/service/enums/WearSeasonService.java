@@ -12,10 +12,7 @@ import java.util.List;
 public class WearSeasonService {
     private final WearSeasonRepository wearSeasonRepository;
 
-    public List<String> getWearSeasons() {
-        return wearSeasonRepository.findAll()
-                .stream()
-                .map(WearSeason::getName)
-                .toList();
+    public List<WearSeason> getWearSeasons() {
+        return wearSeasonRepository.findAll();
     }
 }

@@ -12,10 +12,7 @@ import java.util.List;
 public class WearTypeService {
     private final WearTypeRepository wearTypeRepository;
 
-    public List<String> getWearTypes() {
-        return wearTypeRepository.findAll()
-                .stream()
-                .map(WearType::getName)
-                .toList();
+    public List<WearType> getWearTypes() {
+        return wearTypeRepository.findAll();
     }
 }

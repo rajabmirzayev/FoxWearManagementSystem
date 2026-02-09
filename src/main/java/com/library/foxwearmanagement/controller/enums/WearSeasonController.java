@@ -1,6 +1,7 @@
 package com.library.foxwearmanagement.controller.enums;
 
 import com.library.foxwearmanagement.dto.ApiResponse;
+import com.library.foxwearmanagement.entity.enums.WearSeason;
 import com.library.foxwearmanagement.service.enums.WearSeasonService;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,7 @@ public class WearSeasonController {
     private final WearSeasonService wearSeasonService;
 
     @GetMapping
-    public ResponseEntity<@NonNull ApiResponse<List<String>>> getWearSeasons() {
+    public ResponseEntity<@NonNull ApiResponse<List<WearSeason>>> getWearSeasons() {
         var response = wearSeasonService.getWearSeasons();
         return ResponseEntity.ok(ApiResponse.success(response));
     }

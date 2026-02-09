@@ -12,10 +12,7 @@ import java.util.List;
 public class WearGenderService {
     private final WearGenderRepository wearGenderRepository;
 
-    public List<String> getWearGenders() {
-        return wearGenderRepository.findAll()
-                .stream()
-                .map(WearGender::getName)
-                .toList();
+    public List<WearGender> getWearGenders() {
+        return wearGenderRepository.findAll();
     }
 }
