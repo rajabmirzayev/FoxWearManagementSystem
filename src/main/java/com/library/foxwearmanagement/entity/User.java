@@ -41,7 +41,8 @@ public class User {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     LocalDateTime updatedAt;
 
-    //! orders elave et
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+//    List<Order> orders;
 
     Boolean active = true;
 
@@ -49,6 +50,7 @@ public class User {
     public void prePersist() {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
+        this.role = UserRole.USER;
     }
 
     @PreUpdate

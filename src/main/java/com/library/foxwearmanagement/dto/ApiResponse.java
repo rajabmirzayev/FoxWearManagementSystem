@@ -3,7 +3,7 @@ package com.library.foxwearmanagement.dto;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import static com.library.foxwearmanagement.util.constant.Constant.SUCCESS_MSG;
+import static com.library.foxwearmanagement.util.constant.Constant.*;
 
 @Data
 @AllArgsConstructor
@@ -21,6 +21,15 @@ public class ApiResponse<T> {
                 .success(true)
                 .message(SUCCESS_MSG)
                 .errorCode(null)
+                .data(data)
+                .build();
+    }
+
+    public static <T> ApiResponse<T> validationError(T data) {
+        return ApiResponse.<T>builder()
+                .success(false)
+                .message(VALIDATION_ERROR_MSG)
+                .errorCode(VALIDATION_ERROR_CODE)
                 .data(data)
                 .build();
     }
