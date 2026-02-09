@@ -18,15 +18,31 @@ public class ProductReview {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-
-    String customerName;
     Integer rating;
     String comment;
 
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     LocalDateTime reviewDate;
 
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
+    LocalDateTime lastUpdated;
+
     @ManyToOne
     @JoinColumn(name = "product_id")
     Product product;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    User user;
+
+    @PrePersist
+    public void prePersist() {
+        reviewDate = LocalDateTime.now();
+        lastUpdated = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        lastUpdated = LocalDateTime.now();
+    }
 }

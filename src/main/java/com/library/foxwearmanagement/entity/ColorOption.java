@@ -23,9 +23,26 @@ public class ColorOption {
     WearSize size;
     Double price;
     Double discountedPrice; // ? endirim tətbiq olunandan sonrakı qiymət
-    String imageUrl;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
     Product product;
+
+    Boolean active = true;
+
+    String imageUrl;
+
+    @PrePersist
+    @PreUpdate
+    public void calculateDiscountedPrice() {
+        if (this.product != null && this.product.getDiscount() != null && this.product.getDiscount() > 0) {
+            // ? Məhsulun endirimi varsa, qiymətə endirim əlavə et
+            this.discountedPrice = this.price * (1 - this.product.getDiscount() / 100.0);
+        } else {
+            // ? Endirim yoxdursa, qiyməti olduğu kimi saxla
+            this.discountedPrice = this.price;
+        }
+
+        active = stockQuantity != null && stockQuantity > 0;
+    }
 }

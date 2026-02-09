@@ -27,9 +27,10 @@ public class Product {
     List<ColorOption> colorOptions;
     Integer likes;
 
+    Integer discount;
+
     @JsonFormat(pattern = "dd-MM-yyyy")
     LocalDate releaseDate;  // ? satışa çıxarılma tarixi
-    Integer discount;
 
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     LocalDateTime lastUpdated;
@@ -50,4 +51,17 @@ public class Product {
     WearType wearType;
 
     String description;
+
+    @PrePersist
+    public void prePersist() {
+        releaseDate = LocalDate.now();
+        lastUpdated = LocalDateTime.now();
+        likes = likes == null ? 0 : likes;
+        discount = discount == null ? 0 : discount;
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        lastUpdated = LocalDateTime.now();
+    }
 }
