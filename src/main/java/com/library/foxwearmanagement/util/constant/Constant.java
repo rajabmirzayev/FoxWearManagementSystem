@@ -8,4 +8,6 @@ public class Constant {
     public static final String VALIDATION_ERROR_MSG = "validation error";
 
     public static final String VALIDATION_ERROR_CODE = "VLT_001";
+
+    public static final String USER_ALREADY_EXIST_ERROR_CODE = "USR_001";
 }

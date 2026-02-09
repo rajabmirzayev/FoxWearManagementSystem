@@ -33,4 +33,13 @@ public class ApiResponse<T> {
                 .data(data)
                 .build();
     }
+
+    public static <T> ApiResponse<T> alreadyExistError(Exception exception) {
+        return ApiResponse.<T>builder()
+                .success(false)
+                .message(exception.getMessage())
+                .errorCode(USER_ALREADY_EXIST_ERROR_CODE)
+                .data(null)
+                .build();
+    }
 }

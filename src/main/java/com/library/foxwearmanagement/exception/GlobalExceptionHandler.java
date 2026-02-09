@@ -26,4 +26,20 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(ApiResponse.validationError(err));
     }
+
+    @ExceptionHandler(EmailAlreadyExistException.class)
+    public ResponseEntity<@NonNull ApiResponse<?>> handleEmailAlreadyExistException(
+            EmailAlreadyExistException exception
+    ) {
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(ApiResponse.alreadyExistError(exception));
+    }
+
+    @ExceptionHandler(PhoneNumberAlreadyExistException.class)
+    public ResponseEntity<@NonNull ApiResponse<?>> handlePhoneNumberAlreadyExistException(
+            PhoneNumberAlreadyExistException exception
+    ) {
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(ApiResponse.alreadyExistError(exception));
+    }
 }
