@@ -1,11 +1,5 @@
 package com.library.foxwearmanagement.dto.request;
 
-import com.library.foxwearmanagement.entity.enums.WearGender;
-import com.library.foxwearmanagement.entity.enums.WearPurpose;
-import com.library.foxwearmanagement.entity.enums.WearSeason;
-import com.library.foxwearmanagement.entity.enums.WearType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
