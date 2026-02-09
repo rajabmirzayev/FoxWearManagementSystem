@@ -1,7 +1,10 @@
 package com.library.foxwearmanagement.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.library.foxwearmanagement.util.enums.*;
+import com.library.foxwearmanagement.entity.enums.WearGender;
+import com.library.foxwearmanagement.entity.enums.WearPurpose;
+import com.library.foxwearmanagement.entity.enums.WearSeason;
+import com.library.foxwearmanagement.entity.enums.WearType;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -38,16 +41,20 @@ public class Product {
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     List<ProductReview> reviews;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn(name = "gender", referencedColumnName = "id")
     WearGender gender;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn(name = "purpose", referencedColumnName = "id")
     WearPurpose purpose;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn(name = "season", referencedColumnName = "id")
     WearSeason season;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn(name = "wear_type", referencedColumnName = "id")
     WearType wearType;
 
     String description;

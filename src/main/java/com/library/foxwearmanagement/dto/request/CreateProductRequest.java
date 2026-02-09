@@ -1,10 +1,11 @@
 package com.library.foxwearmanagement.dto.request;
 
-import com.library.foxwearmanagement.util.enums.WearGender;
-import com.library.foxwearmanagement.util.enums.WearPurpose;
-import com.library.foxwearmanagement.util.enums.WearSeason;
-import com.library.foxwearmanagement.util.enums.WearType;
-import jakarta.persistence.*;
+import com.library.foxwearmanagement.entity.enums.WearGender;
+import com.library.foxwearmanagement.entity.enums.WearPurpose;
+import com.library.foxwearmanagement.entity.enums.WearSeason;
+import com.library.foxwearmanagement.entity.enums.WearType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -25,20 +26,16 @@ public class CreateProductRequest {
     Integer discount;
 
     @NotNull(message = "Gender is required")
-    @Enumerated(EnumType.STRING)
-    WearGender gender;
+    Long gender;
 
     @NotNull(message = "Purpose is required")
-    @Enumerated(EnumType.STRING)
-    WearPurpose purpose;
+    Long purpose;
 
     @NotNull(message = "Season is required")
-    @Enumerated(EnumType.STRING)
-    WearSeason season;
+    Long season;
 
     @NotNull(message = "Wear type is required")
-    @Enumerated(EnumType.STRING)
-    WearType wearType;
+    Long wearType;
 
     @Size(min = 10, max = 1000, message = "Description must be between 10 and 1000 characters")
     String description;

@@ -1,6 +1,6 @@
 package com.library.foxwearmanagement.dto.response;
 
-import com.library.foxwearmanagement.util.enums.WearSize;
+import com.library.foxwearmanagement.entity.enums.WearSize;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;

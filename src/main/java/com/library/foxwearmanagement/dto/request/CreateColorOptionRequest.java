@@ -1,7 +1,6 @@
 package com.library.foxwearmanagement.dto.request;
 
 import com.library.foxwearmanagement.entity.Product;
-import com.library.foxwearmanagement.util.enums.WearSize;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
@@ -29,9 +28,8 @@ public class CreateColorOptionRequest {
     @Digits(integer = 10, fraction = 2, message = "Price must have at most 2 decimal places and be a valid number")
     Double price;
 
-    @NotNull
-    @Enumerated(EnumType.STRING)
-    WearSize size;
+    @NotNull(message = "Wear size is required")
+    Long size;
 
     @ManyToOne
     @JoinColumn(name = "product_id")

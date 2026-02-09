@@ -1,6 +1,6 @@
 package com.library.foxwearmanagement.entity;
 
-import com.library.foxwearmanagement.util.enums.WearSize;
+import com.library.foxwearmanagement.entity.enums.WearSize;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -19,8 +19,10 @@ public class ColorOption {
     String colorName;
     Integer stockQuantity;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn(name = "size", referencedColumnName = "id")
     WearSize size;
+
     Double price;
     Double discountedPrice; // ? endirim tətbiq olunandan sonrakı qiymət
 
