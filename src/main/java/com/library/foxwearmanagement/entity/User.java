@@ -1,6 +1,7 @@
 package com.library.foxwearmanagement.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.library.foxwearmanagement.util.PasswordUtil;
 import com.library.foxwearmanagement.util.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.*;
@@ -8,6 +9,7 @@ import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 @Table(name = "user", schema = "users")
@@ -51,10 +53,16 @@ public class User {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
         this.role = UserRole.USER;
+
+        Optional.ofNullable(this.password)
+                .ifPresent(password -> this.password = PasswordUtil.encryptPassword(password));
     }
 
     @PreUpdate
     public void preUpdate() {
         this.updatedAt = LocalDateTime.now();
+
+        Optional.ofNullable(this.password)
+                .ifPresent(password -> this.password = PasswordUtil.encryptPassword(password));
     }
 }

@@ -4,6 +4,7 @@ import com.library.foxwearmanagement.dto.request.CreateUserRequest;
 import com.library.foxwearmanagement.dto.response.CreateUserResponse;
 import com.library.foxwearmanagement.entity.User;
 import com.library.foxwearmanagement.repository.UserRepository;
+import com.library.foxwearmanagement.util.PasswordUtil;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
