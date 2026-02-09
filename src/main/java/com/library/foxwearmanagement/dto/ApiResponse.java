@@ -34,11 +34,20 @@ public class ApiResponse<T> {
                 .build();
     }
 
-    public static <T> ApiResponse<T> alreadyExistError(Exception exception) {
+    public static <T> ApiResponse<T> userAlreadyExistError(Exception exception) {
         return ApiResponse.<T>builder()
                 .success(false)
                 .message(exception.getMessage())
                 .errorCode(USER_ALREADY_EXIST_ERROR_CODE)
+                .data(null)
+                .build();
+    }
+
+    public static <T> ApiResponse<T> colorAlreadyExistError(Exception exception) {
+        return ApiResponse.<T>builder()
+                .success(false)
+                .message(exception.getMessage())
+                .errorCode(COLOR_ALREADY_EXIST_ERROR_CODE)
                 .data(null)
                 .build();
     }

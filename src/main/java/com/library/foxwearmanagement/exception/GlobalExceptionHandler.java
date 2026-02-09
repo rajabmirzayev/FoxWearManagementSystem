@@ -32,7 +32,7 @@ public class GlobalExceptionHandler {
             EmailAlreadyExistException exception
     ) {
         return ResponseEntity.status(HttpStatus.CONFLICT)
-                .body(ApiResponse.alreadyExistError(exception));
+                .body(ApiResponse.userAlreadyExistError(exception));
     }
 
     @ExceptionHandler(PhoneNumberAlreadyExistException.class)
@@ -40,6 +40,14 @@ public class GlobalExceptionHandler {
             PhoneNumberAlreadyExistException exception
     ) {
         return ResponseEntity.status(HttpStatus.CONFLICT)
-                .body(ApiResponse.alreadyExistError(exception));
+                .body(ApiResponse.userAlreadyExistError(exception));
+    }
+
+    @ExceptionHandler(ColorAlreadyExistException.class)
+    public ResponseEntity<@NonNull ApiResponse<?>> handleColorAlreadyExistException(
+            ColorAlreadyExistException exception
+    ) {
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(ApiResponse.colorAlreadyExistError(exception));
     }
 }
