@@ -8,9 +8,7 @@ import com.library.foxwearmanagement.exception.PhoneNumberAlreadyExistException;
 import com.library.foxwearmanagement.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 @Service
 @RequiredArgsConstructor
