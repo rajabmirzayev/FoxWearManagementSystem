@@ -1,0 +1,97 @@
+.left-bar {
+    width: 100%;
+    height: 100vh;
+}
+
+.left-bar > div {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    height: 100%;
+    padding: 20px;
+}
+
+.left-bar .icon a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+.left-bar .icon a img {
+    width: 40px;
+    -webkit-user-drag: none;
+}
+
+.left-bar .icon a p {
+    font-size: 20px;
+    font-family: "Lao MN", sans-serif !important;
+    font-weight: 900;
+}
+
+.left-bar .menus .menu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.left-bar .menus .menu-list a {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    transition: 0.3s cubic-bezier(.2, .7, .2, 1);
+}
+
+.left-bar .menus .menu-list a:hover {
+    background-color: var(--main-color-with-opacity);
+}
+
+.left-bar .menus .menu-list li.active a {
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+}
+
+
+.left-bar .menus .menu-list .menu .menu-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.left-bar .user-profile {
+    padding: 20px;
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    background-color: var(--main-color-with-opacity);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.left-bar .user-profile .profile-photo {
+    width: 30px;
+    height: 30px;
+    color: var(--main-color);
+}
+
+.left-bar .user-profile .texts {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.left-bar .user-profile .texts .user-name {
+    font-size: 18px;
+}
+
+.left-bar .user-profile .texts .user-role {
+    font-size: 14px;
+    color: #777;
+}

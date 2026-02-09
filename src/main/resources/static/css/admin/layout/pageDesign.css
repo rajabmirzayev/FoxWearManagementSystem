@@ -1,0 +1,35 @@
+body {
+    overflow-y: hidden;
+}
+
+.site-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.site-content .left {
+    width: 20%;
+    border-right: 1px solid #ccc;
+}
+
+.site-content .right {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*header*/
+.site-content .right .header > div {
+    min-height: 60px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+/*panel content*/
+.site-content .right .content {
+    padding: 20px;
+    overflow-y: scroll;
+}

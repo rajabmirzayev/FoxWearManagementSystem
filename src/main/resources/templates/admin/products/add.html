@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Product | Admin | FoxWear</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin/layout/leftBarDesign.css">
+    <link rel="stylesheet" href="/css/admin/layout/pageDesign.css">
+    <link rel="stylesheet" href="/css/admin/layout/headerDesign.css">
+</head>
+<body>
+<div class="site-content">
+    <div class="left">
+        <div class="left-bar">
+            <div th:replace="~{admin/layoutAdmin :: left-bar}"></div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="header">
+            <div th:replace="~{admin/layoutAdmin :: header}"></div>
+        </div>
+        <div class="content">
+            <h1>Create Product</h1>
+            <form id="createProductForm">
+                <div class="name-input">
+                    <label for="name">Product Name:</label>
+                    <input type="text" id="name" name="name" required minlength="3" maxlength="50"
+                           pattern="^[a-zA-Z\- ]+$"
+                           title="Product name must contain only letters, spaces and '-' symbol"/>
+                </div>
+                <div class="discount-input input">
+                    <label for="discount">Discount (0-100):</label>
+                    <input type="number" id="discount" name="discount" min="0" max="100"/>
+                </div>
+                <div class="gender-input input">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required></select>
+                </div>
+                <div class="purpose-input input">
+                    <label for="purpose">Purpose:</label>
+                    <select id="purpose" name="purpose" required></select>
+                </div>
+                <div class="season-input input">
+                    <label for="season">Season:</label>
+                    <select id="season" name="season" required></select>
+                </div>
+                <div class="wear-type-input input">
+                    <label for="wearType">Wear Type:</label>
+                    <select id="wearType" name="wearType" required></select>
+                </div>
+                <div class="description-input input">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" minlength="10" maxlength="1000"></textarea>
+                </div>
+                <div class="color-option-form">
+                    <div class="color-name-input input">
+                        <label for="colorName">Color:</label>
+                        <input id="colorName" type="text" name="colorName" required>
+                    </div>
+                    <div class="stock-quantity-input input">
+                        <label for="stockQuantity">Stock Quantity:</label>
+                        <input id="stockQuantity" type="number" name="stockQuantity" required>
+                    </div>
+                    <div class="price-input input">
+                        <label for="price">Price:</label>
+                        <input id="price" type="number" name="price" step="0.01" required>
+                    </div>
+                    <div class="size-input input">
+                        <label for="size">Size:</label>
+                        <select id="size" name="size" required></select>
+                    </div>
+                    <div class="image-input input">
+                        <label for="imageUrl">Image URL:</label>
+                        <input id="imageUrl" type="text" name="imageUrl">
+                    </div>
+                </div>
+                <div class="submit-button">
+                    <button type="submit">Create Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="/js/admin/layout/setActivePage.js"></script>
+<script src="/js/admin/product/api/fillCreateProductForm.js"></script>
+<script src="/js/admin/product/api/sendCreateProductRequest.js"></script>
+</html>
