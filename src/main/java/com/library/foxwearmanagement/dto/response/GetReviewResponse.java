@@ -17,5 +17,6 @@ public class GetReviewResponse {
     String comment;
     Integer rating;
     LocalDateTime createdAt;
+    LocalDateTime updatedAt;
     Boolean status;
 }

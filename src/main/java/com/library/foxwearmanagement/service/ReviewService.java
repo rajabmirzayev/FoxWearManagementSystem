@@ -9,7 +9,6 @@ import com.library.foxwearmanagement.exception.ReviewNotFoundException;
 import com.library.foxwearmanagement.exception.UserNotFoundException;
 import com.library.foxwearmanagement.repository.ReviewRepository;
 import com.library.foxwearmanagement.repository.UserRepository;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;

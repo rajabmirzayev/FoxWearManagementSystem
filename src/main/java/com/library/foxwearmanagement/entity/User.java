@@ -36,6 +36,9 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     List<ProductReview> reviews;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    List<Review> reviewsForWebsite;
+
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     LocalDateTime createdAt;
 
