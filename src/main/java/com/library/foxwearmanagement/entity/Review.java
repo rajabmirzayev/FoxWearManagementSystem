@@ -31,9 +31,6 @@ public class Review {
 
     Boolean status;
 
-    @Version
-    Long version;
-
     @PrePersist
     public void prePersist() {
         this.createdAt = LocalDateTime.now();
