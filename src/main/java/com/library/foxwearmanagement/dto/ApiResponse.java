@@ -69,4 +69,13 @@ public class ApiResponse<T> {
                 .data(null)
                 .build();
     }
+
+    public static <T> ApiResponse<T> reviewNotFoundError(Exception exception) {
+        return ApiResponse.<T>builder()
+                .success(false)
+                .message(exception.getMessage())
+                .errorCode(REVIEW_NOT_FOUND_ERROR_CODE)
+                .data(null)
+                .build();
+    }
 }

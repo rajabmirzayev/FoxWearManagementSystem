@@ -14,4 +14,6 @@ public class Constant {
     public static final String USER_NOT_FOUND_ERROR_CODE = "USR_004";
 
     public static final String COLOR_ALREADY_EXIST_ERROR_CODE = "PRT_001";
+
+    public static final String REVIEW_NOT_FOUND_ERROR_CODE = "RVW_004";
 }

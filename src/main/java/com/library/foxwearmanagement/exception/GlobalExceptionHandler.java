@@ -66,4 +66,12 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body(ApiResponse.colorAlreadyExistError(exception));
     }
+
+    @ExceptionHandler(ReviewNotFoundException.class)
+    public ResponseEntity<@NonNull ApiResponse<?>> handleReviewNotFoundException(
+            ReviewNotFoundException exception
+    ) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(ApiResponse.reviewNotFoundError(exception));
+    }
 }
