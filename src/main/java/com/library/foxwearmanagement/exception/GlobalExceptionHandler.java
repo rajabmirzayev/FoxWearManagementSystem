@@ -35,6 +35,14 @@ public class GlobalExceptionHandler {
                 .body(ApiResponse.notFoundError(exception));
     }
 
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<@NonNull ApiResponse<?>> handleUserNotFoundException(
+            UserNotFoundException exception
+    ) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(ApiResponse.userNotFoundError(exception));
+    }
+
     @ExceptionHandler(EmailAlreadyExistException.class)
     public ResponseEntity<@NonNull ApiResponse<?>> handleEmailAlreadyExistException(
             EmailAlreadyExistException exception

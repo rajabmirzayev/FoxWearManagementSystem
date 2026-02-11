@@ -52,6 +52,15 @@ public class ApiResponse<T> {
                 .build();
     }
 
+    public static <T> ApiResponse<T> userNotFoundError(Exception exception) {
+        return ApiResponse.<T>builder()
+                .success(false)
+                .message(exception.getMessage())
+                .errorCode(USER_NOT_FOUND_ERROR_CODE)
+                .data(null)
+                .build();
+    }
+
     public static <T> ApiResponse<T> colorAlreadyExistError(Exception exception) {
         return ApiResponse.<T>builder()
                 .success(false)
