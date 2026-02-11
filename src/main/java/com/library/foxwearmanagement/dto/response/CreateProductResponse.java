@@ -1,6 +1,6 @@
 package com.library.foxwearmanagement.dto.response;
 
-import com.library.foxwearmanagement.entity.ColorOption;
+import com.library.foxwearmanagement.entity.product.ColorOption;
 import com.library.foxwearmanagement.entity.enums.WearGender;
 import com.library.foxwearmanagement.entity.enums.WearPurpose;
 import com.library.foxwearmanagement.entity.enums.WearSeason;

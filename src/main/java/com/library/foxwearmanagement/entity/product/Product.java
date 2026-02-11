@@ -1,4 +1,4 @@
-package com.library.foxwearmanagement.entity;
+package com.library.foxwearmanagement.entity.product;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.library.foxwearmanagement.entity.enums.WearGender;

@@ -2,7 +2,7 @@ package com.library.foxwearmanagement.service;
 
 import com.library.foxwearmanagement.dto.request.CreateColorOptionRequest;
 import com.library.foxwearmanagement.dto.response.CreateColorOptionResponse;
-import com.library.foxwearmanagement.entity.ColorOption;
+import com.library.foxwearmanagement.entity.product.ColorOption;
 import com.library.foxwearmanagement.entity.enums.WearSize;
 import com.library.foxwearmanagement.exception.ColorAlreadyExistException;
 import com.library.foxwearmanagement.exception.NotFoundException;

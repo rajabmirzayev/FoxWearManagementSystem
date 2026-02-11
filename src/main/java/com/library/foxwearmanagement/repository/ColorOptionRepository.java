@@ -1,6 +1,6 @@
 package com.library.foxwearmanagement.repository;
 
-import com.library.foxwearmanagement.entity.ColorOption;
+import com.library.foxwearmanagement.entity.product.ColorOption;
 import com.library.foxwearmanagement.entity.enums.WearSize;
 import lombok.NonNull;
 import org.springframework.data.jpa.repository.JpaRepository;

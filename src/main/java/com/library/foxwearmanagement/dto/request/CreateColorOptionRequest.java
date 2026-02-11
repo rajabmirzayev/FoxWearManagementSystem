@@ -1,6 +1,6 @@
 package com.library.foxwearmanagement.dto.request;
 
-import com.library.foxwearmanagement.entity.Product;
+import com.library.foxwearmanagement.entity.product.Product;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;

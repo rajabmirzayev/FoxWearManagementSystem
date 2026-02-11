@@ -2,7 +2,7 @@ package com.library.foxwearmanagement.service;
 
 import com.library.foxwearmanagement.dto.request.CreateProductRequest;
 import com.library.foxwearmanagement.dto.response.CreateProductResponse;
-import com.library.foxwearmanagement.entity.Product;
+import com.library.foxwearmanagement.entity.product.Product;
 import com.library.foxwearmanagement.entity.enums.WearGender;
 import com.library.foxwearmanagement.entity.enums.WearPurpose;
 import com.library.foxwearmanagement.entity.enums.WearSeason;

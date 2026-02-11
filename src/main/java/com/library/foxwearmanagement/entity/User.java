@@ -1,6 +1,7 @@
 package com.library.foxwearmanagement.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.library.foxwearmanagement.entity.product.ProductReview;
 import com.library.foxwearmanagement.util.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.*;
