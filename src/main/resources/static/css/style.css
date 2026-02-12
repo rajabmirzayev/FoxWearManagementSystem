@@ -18,10 +18,43 @@ body {
     --main-color: rgb(74, 53, 44);
     --main-color-with-opacity: rgba(74, 53, 44, 0.2);
     --secondary-color: rgb(237, 237, 237);
+    --cubic-bezier: cubic-bezier(.2, .7, .2, 1);
+    --navbar-height: 60px;
+    --offer-height: 30px;
+}
+
+
+.site-header {
+    font-size: 20px;
+    font-family: "Lao MN", sans-serif !important;
+    font-weight: 900;
 }
 
 .ln-vertical {
     background-color: #ccc;
     height: 100%;
     width: 1px;
+}
+
+.flex-row-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.root .page-content {
+    margin-top: calc(var(--offer-height) + var(--navbar-height));
 }
