@@ -14,5 +14,7 @@ public class ContactInfo {
 
     String name;
     String value;
+
+    @Column(length = 5000)
     String icon;
 }
