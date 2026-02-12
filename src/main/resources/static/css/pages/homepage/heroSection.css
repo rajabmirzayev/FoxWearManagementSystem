@@ -1,0 +1,25 @@
+.page-content .hero-section {
+    height: 750px;
+    background-image: url("../../../images/site-images/homepage-hero-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    justify-content: center;
+    gap: 30px;
+}
+
+.page-content .hero-section .title {
+    width: 800px;
+    font-size: 70px;
+    font-weight: 900;
+}
+
+.page-content .hero-section .subtitle {
+    width: 800px;
+    line-height: 1.8;
+}
+
+.page-content .hero-section .buttons {
+    gap: 20px;
+    margin-top: 80px;
+}

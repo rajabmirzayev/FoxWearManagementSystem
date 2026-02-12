@@ -13,13 +13,27 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/pages/layout/header.css">
     <link rel="stylesheet" href="/css/pages/layout/footer.css">
+
+    <link rel="stylesheet" href="/css/pages/homepage/heroSection.css">
 </head>
 <body>
 <div class="root">
     <header th:replace="~{layout :: header}"></header>
 
-    <div class="homepage-content page-content">
-        my homepage 
+    <div class="page-content homepage-content">
+        <div class="section hero-section flex-column">
+            <div class="title" th:text="${heroSection.title}"></div>
+            <div class="subtitle" th:text="${heroSection.subtitle}"></div>
+            <div class="buttons flex-row">
+                <div class="btn-light-bg-light-border-hover-trp">
+                    <a th:href="${heroSection.button1Url}" th:text="${heroSection.button1Name}"></a>
+                </div>
+                <div class="btn-dark-bg-light-border-hover-trp">
+                    <a th:href="${heroSection.button2Url}" th:text="${heroSection.button2Name}"></a>
+                </div>
+            </div>
+        </div>
+        <div class="section most-liked-section" id="most-liked-section"></div>
     </div>
 
     <footer th:replace="~{layout :: footer}"></footer>
