@@ -93,6 +93,6 @@
     height: 25px;
 }
 
-.site-content .right .header .header-actions .logout-btn p {
+.site-content .right .header .header-actions .logout-btn {
     font-size: 16px;
 }

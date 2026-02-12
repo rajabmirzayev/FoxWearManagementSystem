@@ -2,7 +2,6 @@ package com.library.foxwearmanagement.controller.page;
 
 import com.library.foxwearmanagement.entity.siteContent.ContactInfo;
 import com.library.foxwearmanagement.entity.siteContent.Offer;
-import com.library.foxwearmanagement.repository.siteContent.ContactInfoRepository;
 import com.library.foxwearmanagement.service.siteContent.ContactInfoService;
 import com.library.foxwearmanagement.service.siteContent.OfferService;
 import lombok.RequiredArgsConstructor;
