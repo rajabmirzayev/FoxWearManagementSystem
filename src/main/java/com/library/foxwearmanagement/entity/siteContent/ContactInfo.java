@@ -1,18 +1,18 @@
 package com.library.foxwearmanagement.entity.siteContent;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
 import lombok.Data;
-import lombok.experimental.FieldDefaults;
+
 
 @Entity
-@Table(name = "offer", schema = "site_content")
+@Table(name = "contact_info", schema = "site_content")
 @Data
-@FieldDefaults(level = AccessLevel.PRIVATE)
-public class Offer {
+public class ContactInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    String offerText;
+    String name;
+    String value;
+    String icon;
 }
