@@ -2,6 +2,7 @@ package com.library.foxwearmanagement.service;
 
 import com.library.foxwearmanagement.dto.request.CreateProductRequest;
 import com.library.foxwearmanagement.dto.response.CreateProductResponse;
+import com.library.foxwearmanagement.dto.response.GetAllProductResponse;
 import com.library.foxwearmanagement.entity.product.Product;
 import com.library.foxwearmanagement.entity.enums.WearGender;
 import com.library.foxwearmanagement.entity.enums.WearPurpose;
@@ -16,6 +17,8 @@ import com.library.foxwearmanagement.repository.enums.WearTypeRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -50,5 +53,11 @@ public class ProductService {
         product = productRepository.save(product);
 
         return modelMapper.map(product, CreateProductResponse.class);
+    }
+
+    public List<GetAllProductResponse> getMostLikedProducts() {
+        return productRepository.findTop10ByLikes().stream()
+                .map(p -> modelMapper.map(p, GetAllProductResponse.class))
+                .toList();
     }
 }
