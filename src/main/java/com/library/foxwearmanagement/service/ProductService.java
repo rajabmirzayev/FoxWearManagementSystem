@@ -3,6 +3,7 @@ package com.library.foxwearmanagement.service;
 import com.library.foxwearmanagement.dto.request.CreateProductRequest;
 import com.library.foxwearmanagement.dto.response.CreateProductResponse;
 import com.library.foxwearmanagement.dto.response.GetAllProductResponse;
+import com.library.foxwearmanagement.dto.response.GetColorOptionResponse;
 import com.library.foxwearmanagement.entity.product.Product;
 import com.library.foxwearmanagement.entity.enums.WearGender;
 import com.library.foxwearmanagement.entity.enums.WearPurpose;
@@ -57,7 +58,14 @@ public class ProductService {
 
     public List<GetAllProductResponse> getMostLikedProducts() {
         return productRepository.findTop10ByLikes().stream()
-                .map(p -> modelMapper.map(p, GetAllProductResponse.class))
+                .map(product -> {
+                    var map = modelMapper.map(product, GetAllProductResponse.class);
+                    var colorOptionList = product.getColorOptions().stream()
+                            .map(colorOption -> modelMapper.map(colorOption, GetColorOptionResponse.class))
+                            .toList();
+                    map.setColors(colorOptionList);
+                    return map;
+                })
                 .toList();
     }
 }

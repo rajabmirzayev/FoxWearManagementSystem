@@ -8,6 +8,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,4 +25,5 @@ public class GetAllProductResponse {
     WearPurpose purpose;
     WearSeason season;
     WearType wearType;
+    List<GetColorOptionResponse> colors;
 }
