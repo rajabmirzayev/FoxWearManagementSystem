@@ -1,0 +1,74 @@
+footer {
+    height: var(--footer-height);
+    padding: 40px var(--site-padding);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000;
+    color: #fff;
+}
+
+footer > div {
+    height: 100%;
+}
+
+/*LEFT CONTENT*/
+footer .left-content .site-icon img {
+    width: 60px;
+}
+
+footer .left-content .ln-vertical {
+    height: 50px;
+    width: 2px;
+}
+
+footer .left-content .social-media {
+    margin-top: auto;
+    gap: 20px;
+}
+
+footer .left-content .social-media .social-media-links .link {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.5s var(--cubic-bezier);
+}
+
+footer .left-content .social-media .social-media-links .link:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+footer .left-content .social-media .social-media-links {
+    gap: 10px;
+}
+
+footer .left-content .social-media .social-media-links .link i {
+    font-size: 20px;
+}
+
+/*RIGHT CONTENT*/
+footer .right-content {
+    gap: 50px;
+}
+
+footer .right-content .right-item {
+    gap: 20px;
+}
+
+footer .right-content .right-item .header .header-text {
+    text-transform: uppercase;
+}
+
+footer .right-content .right-item .links-list {
+    list-style: none;
+    gap: 5px;
+}
+
+footer .right-content .right-item .links-list .link-item .link:hover {
+    text-decoration: underline;
+}
