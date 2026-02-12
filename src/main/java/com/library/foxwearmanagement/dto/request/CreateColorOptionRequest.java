@@ -17,6 +17,10 @@ public class CreateColorOptionRequest {
     @Pattern(regexp = "^[a-zA-Z\\s]+$", message = "Color name must only contain letters and spaces")
     String colorName;
 
+    @NotBlank(message = "Color code is required")
+    @Size(min = 1, max = 20, message = "Color code must be between 1 and 20 characters")
+    String colorCode;
+
     @NotNull(message = "Stock quantity is required")
     @Min(value = 0, message = "Stock quantity cannot be less than 0")
     @Max(value = 10000, message = "Stock quantity cannot exceed 10,000")

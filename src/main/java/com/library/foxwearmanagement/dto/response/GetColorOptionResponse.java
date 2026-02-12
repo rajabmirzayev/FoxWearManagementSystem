@@ -9,6 +9,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class GetColorOptionResponse {
     Long id;
+    String colorCode;
     Double price;
     Double discountedPrice; // ? endirim tətbiq olunandan sonrakı qiymət
     Boolean active = true;

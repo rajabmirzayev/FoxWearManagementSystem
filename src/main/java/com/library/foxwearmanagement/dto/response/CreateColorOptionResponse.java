@@ -15,6 +15,7 @@ public class CreateColorOptionResponse {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String colorName;
+    String colorCode;
     Integer stockQuantity;
     WearSize size;
     Double price;

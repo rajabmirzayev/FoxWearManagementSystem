@@ -17,6 +17,7 @@ public class ColorOption {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String colorName;
+    String colorCode;
     Integer stockQuantity;
 
     @ManyToOne
