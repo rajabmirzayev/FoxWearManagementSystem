@@ -15,6 +15,7 @@ header .offer {
     background-color: var(--main-color);
     color: var(--secondary-color);
     font-size: 13px;
+    z-index: 1001;
 }
 
 header .offer .social-media {
@@ -79,6 +80,8 @@ header .navbar {
     top: var(--offer-height);
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
 }
 
 header .navbar .nav {
